@@ -1,0 +1,20 @@
+# DINO CRISIS
+
+## Rip Details
+
+- **User:** DC-Plug
+- **Date:** 2001-06-12 11:41:00
+- **Status:** WORKS PERFECT
+
+## Downsampling
+
+NOTHING
+
+## Bin Hacking
+
+JUST THE 1ST_READ.BIN
+
+## Comments
+
+IF IT DONT WORK YOU AINT HACKED IT RIGHT
+
