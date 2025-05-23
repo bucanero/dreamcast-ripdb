@@ -23,13 +23,17 @@ def export_rows_to_text_files(db_file, table_name, output_dir='output'):
         columns = [column[1] for column in cursor.fetchall()]
         
         # Get all rows from the table
-        cursor.execute(f"SELECT * FROM {table_name}")
+        cursor.execute(f"SELECT * FROM {table_name} ORDER BY UPPER(game_name)")
         rows = cursor.fetchall()
+        
+        mdi = open(os.path.join(output_dir, 'README.md'), 'w', encoding='utf-8')
         
         # Export each row to a separate file
         for i, row in enumerate(rows, start=1):
             fname = row[1].lower().replace(" ", "-").replace("/", "-").replace("*", "").replace(":", "").replace("?", "")
             filename = os.path.join(output_dir, f"{row[0]}-{fname}.md")
+            
+            mdi.write(f"- [{row[1]}]({row[0]}-{fname}.html)\r\n")
             
             with open(filename, 'w', encoding='utf-8') as f:
                 # Write column headers and values
